@@ -34,7 +34,7 @@
 | :--: | :--: | :--: | :--: | :--: | :--: |
 |  32  |  16  |  8   |  4   |  2   |  1   |
 
-1001~binary~  = 1 × 8 + 0 × 4 + 0 × 2 + 1 × 1 = 9
+1001~binary~  = $1 \times 8 + 0 \times 4 + 0 \times 2 + 1 \times 1 = 9$
 
 ### Decimal:
 
@@ -113,12 +113,17 @@ Manipulate directly when the input / operand is binary. If not, convert input / 
 |0|1|0|
 |1|1|1|
 
+清零某些位、判断奇偶（x & 1）
+
+Usually used for clearing certain bit, checking odd or even numbers (x & 1).
+
 e.g.
+
 ``` &
-	0101010
-&	1001001
-	-------
-	0001000
+	0101010 (42)
+&	1001001 (73)
+	------------
+	0001000 (8)
 ```
 
 
@@ -132,29 +137,38 @@ e.g.
 |0|1|1|
 |1|1|1|
 
+将某些位置为 1（设定标志位）
+
+Set certain positions to 1 (set the flag bits)
+
 e.g.
 
 ``` |
-	1010010
-|	0101010
-	-------
-	1111010
+	1010010 (82)
+|	0101010 (42)
+	-------------
+	1111010 (122)
 ```
 
 
 
 3. NOT    --    ~
+
 |input|output|
 |:---:|:---:|
 |0|1|
 |1|0|
 
+ 在补码系统中，~x 的结果等于 -(x + 1)
+
+In the two's complement system, the result of ~x is equal to -(x + 1)
+
 e.g.
 
 ``` ~
-~	1010001
------------
-	0101110
+~	1010001 (81)
+----------------
+	0101110 (46)
 ```
 
 
@@ -167,12 +181,22 @@ e.g.
 |0|1|1|
 |1|1|0|
 
+不使用临时变量交换两个数 (a = a^b; b = a^b; a = a^b;)
+
+判断两个数是否相等（结果为0则相等）
+
+简单的加密
+
+Swapping two numbers without using a temporary variable (a = a^b; b = a^b; a = a^b;).
+Checking if two numbers are equal (the result is 0 if they are equal).
+Simple encryption.
+
 e.g.
 
 ``` ^
-	1010110
-~	0111010
------------
-	1101100
+	1010110 (86)
+~	0111010 (58)
+-----------------
+	1101100 (108)
 ```
 
