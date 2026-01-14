@@ -28,15 +28,19 @@
 
 ​	只由0，1组成
 
+​	composed of 0, 1.
+
 | 2^5^ | 2^4^ | 2^3^ | 2^2^ | 2^1^ | 2^0^ |
 | :--: | :--: | :--: | :--: | :--: | :--: |
 |  32  |  16  |  8   |  4   |  2   |  1   |
 
-​						1001 = 1 × 8 + 0 × 4 + 0 × 2 + 1 × 1 = 9
+1001~binary~  = 1 × 8 + 0 × 4 + 0 × 2 + 1 × 1 = 9
 
 ### Decimal:
 
 ​	由0，1，2，3，4，5，6，7，8，9组成
+
+​	composed of 0，1，2，3，4，5，6，7，8，9.
 
 | 10^3^ | 10^2^ | 10^1^ | 10^0^ |
 | :---: | :---: | :---: | :---: |
@@ -51,6 +55,8 @@
 | 4096  |  256  |  16   |   1   |
 
 ​	由0，1，2，3，4，5，6，7，8，9，A, B, C, D, E, F组成
+
+​	composed of 0，1，2，3，4，5，6，7，8，9，A, B, C, D, E, F.
 
 0xA5~hex~  = 10 × 16 + 5 × 1 = 165
 
@@ -74,11 +80,15 @@
 
 ​		为了方便，先将十六进制转到十进制，再转换为2进制
 
+​		Tricks: In order to simplify, convert hexadecimal to decimal, and then convert decimal to binary
+
 ​		0xF7~hex~ = 11110111~binary~ 
 
 5. Binary to Hexadecimal:
 
 ​		先将二进制转换为十进制，再转换为十六进制
+
+​		First, convert binary to decimal, and then convert decimal to hexadecimal
 
 ​		01001101~binary~ = 0x4D~hex~
 
@@ -91,4 +101,78 @@
 ## Bitwise Operations
 
 当操作数是二进制时，直接操作，当操作数是十进制 / 十六进制时，先转换成二进制，再进行操作
+
+Manipulate directly when the input / operand is binary. If not, convert input / operand to bianry first and calculate.
+
+1. AND    --    & 
+
+|operand1|operand2|output|
+|:---:|:---:|:---:|
+|0|0|0|
+|1|0|0|
+|0|1|0|
+|1|1|1|
+
+e.g.
+``` &
+	0101010
+&	1001001
+	-------
+	0001000
+```
+
+
+
+2. OR    --    |
+
+|operand1|operand2|output|
+|:---:|:---:|:---:|
+|0|0|0|
+|1|0|1|
+|0|1|1|
+|1|1|1|
+
+e.g.
+
+``` |
+	1010010
+|	0101010
+	-------
+	1111010
+```
+
+
+
+3. NOT    --    ~
+|input|output|
+|:---:|:---:|
+|0|1|
+|1|0|
+
+e.g.
+
+``` ~
+~	1010001
+-----------
+	0101110
+```
+
+
+
+4. XOR    --    ^
+|operand1|operand2|output|
+|:---:|:---:|:---:|
+|0|0|0|
+|1|0|1|
+|0|1|1|
+|1|1|0|
+
+e.g.
+
+``` ^
+	1010110
+~	0111010
+-----------
+	1101100
+```
 
