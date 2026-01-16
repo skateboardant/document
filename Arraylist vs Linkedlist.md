@@ -21,23 +21,7 @@
 
 
 
-## 2. Linkedlist
-
-​	The simplest method to obtaiin a dynamical sized list of elements is by storing them wherever there is available space. Create a custom data type called a Node. A Node contains one item and one pointer. The item represents the element of the list and the pointer directs to the address where the next Node, containing the next element resides in memory. We only need to maintain a reference to the first Node, typically in the stack. 
-
-​	When we wish to add a new element to the list, we search for an available space big enough for that Node, then we update the last Node of the list point to the new Node, which becomes the last one. This approach eliminates the concern about the list of elements growing. 
-
-​	However, linkedlists suffer from a significant drawback    --    <u>they are not efficient for caching data</u>. 
-
-​	When the data required for a CPU operation is found, we refer it as a **cache hit**. Conversely, if the data is not in cache, we refer it as a **cache miss**. 
-
-​	Due to cache's limited size, the cache cannot store a copy of the entire memory. For optimal performance, data should ideally be as compact as possible, allowing it to fit into the cache, and increasing the chance of cache hit. 
-
-​	As linkedlist's elements are scattered throughout memory, they are very unlikely to be cached. Arrays keep elements compacted in memory, which make them better at caching.
-
-
-
-## 3. Arraylist
+## 2. Arraylist
 
 ​	Instead of just holding a reference to an array, we create a **data type that includes that reference plus additional information** (capacity, length) about the array. When created, this data type allocates memory for an empty array. The capacity attribute indicates how many elements the array can hold. The length attribute indicates how many elements the array contains at any given time. 
 
@@ -48,6 +32,22 @@
 ​	Another characteristic that arraylists inherit from arrays is **constant time access**. Since elements are internally stored in the array, accessing an element at a specific position simply involves retrieving the element from the array by indexing it. 
 
 ​	To prevent accessing elements beyond the array boundaries, we perform a validation before indexing the array. If the provided index is greater than or equal to the array length, we can return NULL, None or a proper error. 
+
+
+
+## 3. Linkedlist
+
+​	The simplest method to obtain a dynamical sized list of elements is by storing them wherever there is available space. Create a custom data type called a Node. A Node contains one item and one pointer. The item represents the element of the list and the pointer directs to the address where the next Node, containing the next element resides in memory. We only need to maintain a reference to the first Node, typically in the stack. 
+
+​	When we wish to add a new element to the list, we search for an available space big enough for that Node, then we update the last Node of the list point to the new Node, which becomes the last one. This approach eliminates the concern about the list of elements growing. 
+
+​	However, linkedlists suffer from a significant drawback    --    <u>they are not efficient for caching data</u>. 
+
+​	When the data required for a CPU operation is found, we refer it as a **cache hit**. Conversely, if the data is not in cache, we refer it as a **cache miss**. 
+
+​	Due to cache's limited size, the cache cannot store a copy of the entire memory. For optimal performance, data should ideally be as compact as possible, allowing it to fit into the cache, and increasing the chance of cache hit. 
+
+​	As linkedlist's elements are scattered throughout memory, they are very unlikely to be cached. Arrays keep elements compacted in memory, which make them better at caching.
 
 
 
@@ -77,6 +77,10 @@
 
 ​	The scrip languages are typically not compiled into machine code, instead, they rely on a special program to interpret the script, allowing it to emulate the desired behavior. To execute that emulation process, the real hardware is used. For this reason, the programs are often referred to as interpreters or virtual machines. When we declare an array, behind the scenes, the interpreter generates a specialized data structure to simulate an array elements. 
 
+### Python
+
 ​	PyListObject is what interpreter generates when we create a Python list. PyListObject type is nothing, but an array of object pointers. So, Python does, is similar to Java does for primitives types  --  An array of memory addresses pointing to the values. There is a key difference, in Java, all pointers within the array pointer to values of the same type, in Python these pointers point to objects, implying they can point to values of different types. 
+
+### Javascript
 
 ​	Javascript arrays aren't actually arrays, they are hashmaps. Javascript doesn't care itself much with arrays in memory. Instead, when a Javascript array is declared, the engine creates a hashmap where key is correspond to the indexes. Indexing process is essentially syntax sugar for retrieving an element from the hashmap by its key.
